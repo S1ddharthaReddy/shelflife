@@ -5,6 +5,7 @@ const connectDB = require("./src/config/db");
 const authRoutes = require("./src/routes/authRoutes")
 const householdRoutes = require("./src/routes/householdRoutes")
 const itemRoutes = require('./src/routes/itemRoutes');
+const dashboardRoutes = require('./src/routes/dashboardRoutes');
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes)
 app.use('/api/households', householdRoutes)
 app.use('/api/items', itemRoutes)
+app.use('/api/dashboard', dashboardRoutes);
 
 const StartServer = async () => {
     await connectDB()
